@@ -1,0 +1,5 @@
+echo 'Top Commit Contributor"
+git log | grep Merge -b3 | grep Author | awk -F '<' '{print $2}' | awk -F '<' '{print 2}' | sed 's/>//' | sort | uniq -c | sort  -nr |  head -n 3
+
+echo  most Merge Contributor'
+git log | grep Merge -b3 | grep Author | awk -F ':' '{print $2}' | awk -F '<' '{print 2}' | sed 's/>//' | sort | uniq -c | sort  -nr |  head -n 3
